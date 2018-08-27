@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
  * @author Tanamo
  */
 @Configuration
-//@ComponentScan(basePackages = {"com.tanamoinc.springwebapp.dao", "com.tanamoinc.springwebapp.dao.services"})
+@ComponentScan(basePackages = {"com.tanamoinc.springwebapp.dao"})
 public class SpringRoot {
 
     @Bean

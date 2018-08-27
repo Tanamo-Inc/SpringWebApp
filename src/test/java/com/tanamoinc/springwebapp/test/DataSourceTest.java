@@ -14,16 +14,15 @@ public class DataSourceTest {
 
     public static void main(String[] args) {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringRoot.class);
-         DataSource ds = ctx.getBean(DataSource.class);
+        DataSource ds = ctx.getBean(DataSource.class);
         JdbcTemplate jt = new JdbcTemplate(ds);
-        
-          String sql="INSERT INTO user_table(`name`, `phone`, `email`, `address`, `loginName`, `password`) VALUES(?,?,?,?,?,?)";
-        
+
+        String sql = "INSERT INTO user_table(`name`, `phone`, `email`, `address`, `loginName`, `password`) VALUES(?,?,?,?,?,?)";
+
         Object[] param = new Object[]{"Tanamo", "+23311360", "tanamoinc@gmail.com", "Knust", "tanamo", "123456"};
         jt.update(sql, param);
-        System.out.println("------SQL executed-----");
-        
-        
+        System.out.println("******SQL executed******");
+
     }
 
 }
