@@ -18,6 +18,15 @@ public interface UserService {
 
     public void register(User u);
 
+    /**
+     * Handles login operation(authentication) using given credentials, it
+     * returns User object when success and null when failed. When user account
+     * is blocked an exception will be thrown by this method.
+     *
+     * @param loginName
+     * @param password
+     * @return
+     */
     public User login(String loginName, String password) throws UserBlockedException;
 
     public List<User> getUserList();

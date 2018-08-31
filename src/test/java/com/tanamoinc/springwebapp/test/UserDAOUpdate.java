@@ -23,7 +23,7 @@ public class UserDAOUpdate {
         u.setPhone("0201302034");
         u.setEmail("antandoh.nsp@knustedu.gh");
         u.setAddress("Kumasi, knust");
-        u.setRole(1);
+        u.setRole(2);
         u.setLoginStatus(1);
         userDAO.update(u);
 
