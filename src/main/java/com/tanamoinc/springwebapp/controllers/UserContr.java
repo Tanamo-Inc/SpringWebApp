@@ -36,16 +36,18 @@ public class UserContr {
 
             if (loggedInUser == null) {
                 //FAILED
-                mod.addAttribute("err","Login Failed!");
+                mod.addAttribute("err", "Login Failed!");
                 return "index";
             } else {
                 //SUCCESS
                 if (loggedInUser.getRole().equals(UserService.ROLE_ADMIN)) {
+                    userInSession(loggedInUser, session);
                     return "redirect:admin/admin_dashboard";
                 } else if (loggedInUser.getRole().equals(UserService.ROLE_USER)) {
+                    userInSession(loggedInUser, session);
                     return "redirect:user/user_dashboard";
                 } else {
-                    mod.addAttribute("err","Invalid User ROLE");
+                    mod.addAttribute("err", "Invalid User ROLE");
                     return "index";
                 }
             }
@@ -56,6 +58,11 @@ public class UserContr {
 
     }
 
+    private void userInSession(User u, HttpSession session) {
+        session.setAttribute("_id", u.getId());
+        session.setAttribute("role", u.getRole());
+    }
+
     @RequestMapping(value = "/user/user_dashboard")
     public String userDashBoard() {
         return "user_dashboard"; //JSP - /WEB-INF/views/user_dashboard.jsp
@@ -64,6 +71,12 @@ public class UserContr {
     @RequestMapping(value = "/admin/admin_dashboard")
     public String adminDashBoard() {
         return "admin_dashboard"; //JSP - /WEB-INF/views/admin_dashboard.jsp
+    }
+
+    @RequestMapping(value = "/logout")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:index?act=lo";
     }
 
 }

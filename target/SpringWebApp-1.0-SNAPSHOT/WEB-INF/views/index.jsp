@@ -46,9 +46,13 @@
                     <%-- Page Content Area--%>
                     <h3>User Login</h3>
 
-                     <c:if test="${err!=null}">
+                    <c:if test="${err!=null}">
                         <p class="error">${err}</p>
                     </c:if>
+
+                    <c:if test="${param.act eq 'lo'}">
+                        <p class="success">Logout Successfully!!!</p>
+                    </c:if>    
 
                     <s:url var="url_login"  value="/login"/>
 
@@ -82,14 +86,12 @@
                 </td>
             </tr>
 
-
             <tr>
                 <td height="25px">
                     <%-- Footer --%>
                     <jsp:include page="include/footer.jsp"/>
                 </td>
             </tr>
-
 
         </table>
 
