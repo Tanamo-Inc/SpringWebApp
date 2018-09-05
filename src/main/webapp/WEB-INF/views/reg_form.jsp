@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : Aug 28, 2018, 4:04:01 PM
+    Document   : reg_form
+    Created on : Sep 4, 2018, 8:31:13 PM
     Author     : Tanamo
 --%>
 
@@ -44,7 +44,7 @@
             <tr>
                 <td height="350px" valign="top">
                     <%-- Page Content Area--%>
-                    <h3>User Login</h3>
+                    <h3>User Registration</h3>
 
                     <c:if test="${err!=null}">
                         <p class="error">${err}</p>
@@ -54,38 +54,54 @@
                         <p class="success">Logout Successfully!!!</p>
                     </c:if>    
 
-                    <c:if test="${param.act eq 'reg'}">
-                        <p class="success">User Registered Successfully. Please login</p>
-                    </c:if> 
+                    <s:url var="url_reg"  value="/register"/>
 
-                    <s:url var="url_login"  value="/login"/>
-                    
-                    <s:url var="url_register"  value="/reg_form"/>
-
-                    <f:form action="${url_login}" modelAttribute="command">
+                    <f:form action="${url_reg}" modelAttribute="command">
 
                         <table border="1">
 
                             <tr>
+                                <td>Name</td>
+                                <td><f:input path="user.name" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td>Phone Number</td>
+                                <td><f:input path="user.phone" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td>Email</td>
+                                <td><f:input path="user.email" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td>Address</td>
+                                <td><f:textarea path="user.address" /> </td>
+                            </tr>
+
+
+                            <tr>
                                 <td>Username</td>
-                                <td><f:input path="loginName" /> </td>
+                                <td><f:input path="user.loginName" /> </td>
                             </tr>
 
                             <tr>
                                 <td>Password</td>
-                                <td><f:password path="password" /> </td>
+                                <td><f:password path="user.password" /> </td>
                             </tr>
 
                             <tr>                                
                                 <td colspan="2" align="right">
-                                    <button>Login</button> <br/>
-                                    <a href="${url_register}">New User Registration</a>
+                                    <button>Submit</button> <br/>
                                 </td>
                             </tr>
 
                         </table>
 
                     </f:form>
+
+
 
                 </td>
             </tr>

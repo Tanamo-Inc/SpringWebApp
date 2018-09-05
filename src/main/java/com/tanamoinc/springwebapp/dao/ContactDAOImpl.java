@@ -21,10 +21,10 @@ public class ContactDAOImpl extends BaseDAO implements ContactDAO {
     @Override
     public void save(Contact c) {
 
-        String sql = "INSERT INTO contact_table(_id, name, phone, email, address, remark) VALUES(:_id, :name, :phone, :email, :address, :remark)";
+        String sql = "INSERT INTO contact_table(userId, cName, phone, email, address, remark) VALUES(:userId, :cName, :phone, :email, :address, :remark)";
         Map m = new HashMap();
         m.put("userId", c.getUserId());
-        m.put("name", c.getcName());
+        m.put("cName", c.getcName());
         m.put("phone", c.getPhone());
         m.put("email", c.getEmail());
         m.put("address", c.getAddress());
@@ -38,7 +38,7 @@ public class ContactDAOImpl extends BaseDAO implements ContactDAO {
 
     @Override
     public void update(Contact c) {
-        String sql = "UPDATE contact_table SET name=:name, phone=:phone, email=:email, address=:address, remark=:remark WHERE _id=:_id";
+        String sql = "UPDATE contact_table SET cName=:cName, phone=:phone, email=:email, address=:address, remark=:remark WHERE _id=:_id";
         Map m = new HashMap();
         m.put("_id", c.getId());
         m.put("cName", c.getcName());
@@ -63,19 +63,19 @@ public class ContactDAOImpl extends BaseDAO implements ContactDAO {
 
     @Override
     public Contact findById(Integer contactId) {
-        String sql = "SELECT _id, userId, name, phone, email, address, remark FROM contact WHERE _id=?";
+        String sql = "SELECT _id, userId, cName, phone, email, address, remark FROM contact WHERE _id=?";
         return getJdbcTemplate().queryForObject(sql, new ContactRowMapper(), contactId);
     }
 
     @Override
     public List<Contact> findAll() {
-        String sql = "SELECT _id, userId, name, phone, email, address, remark FROM contact_table";
+        String sql = "SELECT _id, userId, cName, phone, email, address, remark FROM contact_table";
         return getJdbcTemplate().query(sql, new ContactRowMapper());
     }
 
     @Override
     public List<Contact> findByProperty(String propName, Object propValue) {
-        String sql = "SELECT _id, userId, name, phone, email, address, remark FROM contact_table WHERE " + propName + "=?";
+        String sql = "SELECT _id, userId, cName, phone, email, address, remark FROM contact_table WHERE " + propName + "=?";
         return getJdbcTemplate().query(sql, new ContactRowMapper(), propValue);
     }
 

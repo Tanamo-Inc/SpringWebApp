@@ -1,11 +1,13 @@
 package com.tanamoinc.springwebapp.controllers;
 
 import com.tanamoinc.springwebapp.command.LoginCommand;
+import com.tanamoinc.springwebapp.command.userCommand;
 import com.tanamoinc.springwebapp.domain.User;
 import com.tanamoinc.springwebapp.exceptions.UserBlockedException;
 import com.tanamoinc.springwebapp.services.UserService;
 import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -59,6 +61,7 @@ public class UserContr {
     }
 
     private void userInSession(User u, HttpSession session) {
+       // session.setAttribute("user", u);
         session.setAttribute("_id", u.getId());
         session.setAttribute("role", u.getRole());
     }
@@ -71,6 +74,27 @@ public class UserContr {
     @RequestMapping(value = "/admin/admin_dashboard")
     public String adminDashBoard() {
         return "admin_dashboard"; //JSP - /WEB-INF/views/admin_dashboard.jsp
+    }
+
+    @RequestMapping(value = "/reg_form")
+    public String registrationForm(Model m) {
+        userCommand cmd = new userCommand();
+        m.addAttribute("command", cmd);
+        return "reg_form";//JSP
+    }
+
+    @RequestMapping(value = "/register")
+    public String registerUser(@ModelAttribute("command") userCommand cmd, Model m) {
+        try {
+            User user = cmd.getUser();
+            user.setRole(UserService.ROLE_USER);
+            user.setLoginStatus(UserService.LOGIN_STATUS_ACTIVE);
+            userService.register(user);
+            return "redirect:index?act=reg";
+        } catch (DuplicateKeyException e) {
+            m.addAttribute("err", "Username is already registered. Please select another username.");
+            return "reg_form";
+        }
     }
 
     @RequestMapping(value = "/logout")

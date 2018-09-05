@@ -50,10 +50,10 @@ public class ContactServiceImpl extends BaseDAO implements ContactService {
     public List<Contact> findUserContact(Integer userId) {
         return contactDAO.findByProperty("userId", userId);
     }
-
+    
     @Override
     public List<Contact> findUserContact(Integer userId, String txt) {
-        String sql = "SELECT _id, userId, name, phone, email, address, remark FROM contact_table WHERE _id=? AND (name LIKE '%" + txt + "%' OR address LIKE '%" + txt + "%' OR phone LIKE '%" + txt + "%' OR email LIKE '%" + txt + "%' OR remark LIKE '%" + txt + "%')";
+        String sql = "SELECT _id, userId, cName, phone, email, address, remark FROM contact_table WHERE _id=? AND (name LIKE '%" + txt + "%' OR address LIKE '%" + txt + "%' OR phone LIKE '%" + txt + "%' OR email LIKE '%" + txt + "%' OR remark LIKE '%" + txt + "%')";
         return getJdbcTemplate().query(sql, new ContactRowMapper(), userId);
     }
 

@@ -54,7 +54,13 @@
                         <p class="success">Logout Successfully!!!</p>
                     </c:if>    
 
+                    <c:if test="${param.act eq 'reg'}">
+                        <p class="success">User Registered Successfully. Please login</p>
+                    </c:if> 
+
                     <s:url var="url_login"  value="/login"/>
+                    
+                    <s:url var="url_register"  value="/reg_form"/>
 
                     <f:form action="${url_login}" modelAttribute="command">
 
@@ -73,15 +79,13 @@
                             <tr>                                
                                 <td colspan="2" align="right">
                                     <button>Login</button> <br/>
-                                    <a href="#">New User Registration</a>
+                                    <a href="${url_register}">New User Registration</a>
                                 </td>
                             </tr>
 
                         </table>
 
                     </f:form>
-
-
 
                 </td>
             </tr>

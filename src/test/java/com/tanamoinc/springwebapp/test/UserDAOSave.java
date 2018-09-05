@@ -17,6 +17,7 @@ public class UserDAOSave {
         UserDAO userDAO = ctx.getBean(UserDAO.class);
 
         User u = new User();
+     
         u.setName("Tony");
         u.setPhone("0200200200");
         u.setEmail("tanamoinc@gmail.com");

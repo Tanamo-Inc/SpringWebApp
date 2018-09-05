@@ -6,23 +6,23 @@ package com.tanamoinc.springwebapp.domain;
  */
 public class Contact {
 
-    private Integer _id; //PK
+    private Integer id; //PK
     private Integer userId; //FK
     private String cName;
     private String phone;
     private String email;
     private String address;
+    private String remark;
 
     public Contact() {
     }
 
-    
     public Integer getId() {
-        return _id;
+        return id;
     }
 
     public void setId(Integer _id) {
-        this._id = _id;
+        this.id = _id;
     }
 
     public Integer getUserId() {
@@ -72,6 +72,5 @@ public class Contact {
     public void setRemark(String remark) {
         this.remark = remark;
     }
-    private String remark;
 
 }

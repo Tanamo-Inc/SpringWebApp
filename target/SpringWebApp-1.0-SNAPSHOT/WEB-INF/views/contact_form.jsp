@@ -1,8 +1,9 @@
 <%-- 
-    Document   : index
-    Created on : Aug 28, 2018, 4:04:01 PM
+    Document   : contact_form
+    Created on : Sep 5, 2018, 7:29:53 AM
     Author     : Tanamo
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="s" %> 
@@ -44,42 +45,46 @@
             <tr>
                 <td height="350px" valign="top">
                     <%-- Page Content Area--%>
-                    <h3>User Login</h3>
+                    <h3>Contact Form</h3>
 
                     <c:if test="${err!=null}">
                         <p class="error">${err}</p>
                     </c:if>
 
-                    <c:if test="${param.act eq 'lo'}">
-                        <p class="success">Logout Successfully!!!</p>
-                    </c:if>    
+                    <s:url var="url_savec"  value="/user/save_contact"/>
 
-                    <c:if test="${param.act eq 'reg'}">
-                        <p class="success">User Registered Successfully. Please login</p>
-                    </c:if> 
-
-                    <s:url var="url_login"  value="/login"/>
-                    
-                    <s:url var="url_register"  value="/reg_form"/>
-
-                    <f:form action="${url_login}" modelAttribute="command">
+                    <f:form action="${url_savec}" modelAttribute="command">
 
                         <table border="1">
 
                             <tr>
-                                <td>Username</td>
-                                <td><f:input path="loginName" /> </td>
+                                <td>Name</td>
+                                <td><f:input path="cName" /> </td>
                             </tr>
 
                             <tr>
-                                <td>Password</td>
-                                <td><f:password path="password" /> </td>
+                                <td>Phone Number</td>
+                                <td><f:input path="phone" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td>Email</td>
+                                <td><f:input path="email" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td>Address</td>
+                                <td><f:textarea path="address" /> </td>
+                            </tr>
+
+                            <tr>
+                                <td>Remarks</td>
+                                <td><f:textarea path="remark" /> </td>
                             </tr>
 
                             <tr>                                
                                 <td colspan="2" align="right">
-                                    <button>Login</button> <br/>
-                                    <a href="${url_register}">New User Registration</a>
+                                    <button>Save</button> 
                                 </td>
                             </tr>
 
