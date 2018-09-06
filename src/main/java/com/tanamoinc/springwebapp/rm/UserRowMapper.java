@@ -13,6 +13,8 @@ public class UserRowMapper implements RowMapper<User> {
 
     @Override
     public User mapRow(ResultSet rs, int i) throws SQLException {
+
+        //User database column calls
         User u = new User();
         u.setId(rs.getInt("_id"));
         u.setName(rs.getString("name"));

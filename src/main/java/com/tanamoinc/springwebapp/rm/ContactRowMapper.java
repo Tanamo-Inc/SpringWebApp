@@ -13,6 +13,8 @@ public class ContactRowMapper implements RowMapper<Contact> {
 
     @Override
     public Contact mapRow(ResultSet rs, int i) throws SQLException {
+
+        //Contact database column calls
         Contact c = new Contact();
         c.setId(rs.getInt("_id"));
         c.setUserId(rs.getInt("userId"));

@@ -12,14 +12,15 @@
 <c:if test="${sessionScope._id==null}"  >
     <%--Guest Menu--%>
     <s:url var="url_reg_form" value="/reg_form"/>
+    <s:url var="url_index" value="/index"/>
 
-    <a href="#">Home</a>|<a href="${url_reg_form}">Register</a>|<a href="#">Login</a>|<a href="#">About</a>
+    <a href="${url_index}">Home</a>|<a href="${url_reg_form}">Register</a>|<a href="#">Login</a>|<a href="#">About</a>
 
 </c:if>
 
 <c:if test="${sessionScope._id!=null && sessionScope.role == 1}">
     <%-- Admin Menu --%>    
-    <a href="#">Home</a> | <a href="#">User List</a> | <a href="${lgo}">Logout</a>  
+    <a href="#">Home</a> | <a href="<s:url value="/admin/users"/>">User List</a> | <a href="${lgo}">Logout</a>  
 </c:if>
 
 <c:if test="${sessionScope._id!=null && sessionScope.role == 2}">

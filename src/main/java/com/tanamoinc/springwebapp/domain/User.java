@@ -6,7 +6,7 @@ package com.tanamoinc.springwebapp.domain;
  */
 public class User {
 
-    private Integer _id;
+    private Integer id;
     private String name;
     private String phone;
     private String address;
@@ -20,11 +20,11 @@ public class User {
     }
 
     public Integer getId() {
-        return _id;
+        return id;
     }
 
     public void setId(Integer _id) {
-        this._id = _id;
+        this.id = _id;
     }
 
     public String getName() {

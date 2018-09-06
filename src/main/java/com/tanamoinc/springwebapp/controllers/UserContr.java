@@ -61,7 +61,7 @@ public class UserContr {
     }
 
     private void userInSession(User u, HttpSession session) {
-       // session.setAttribute("user", u);
+        // session.setAttribute("user", u);
         session.setAttribute("_id", u.getId());
         session.setAttribute("role", u.getRole());
     }
@@ -101,6 +101,12 @@ public class UserContr {
     public String logout(HttpSession session) {
         session.invalidate();
         return "redirect:index?act=lo";
+    }
+
+    @RequestMapping(value = "/admin/users")
+    public String getUserList(Model m) {
+        m.addAttribute("userList", userService.getUserList());
+        return "users"; //JSP
     }
 
 }
