@@ -15,6 +15,24 @@
         <title>User List</title>
         <s:url var="url_css" value="/static/css/main.css"/>
         <link href="${url_css}" rel="stylesheet" type="text/css"/> 
+
+        <s:url var="url_jqlib" value="/static/js/jquery-3.2.1.min.js" />
+        <script src="${url_jqlib}"></script>
+
+        <script>
+            function changeStatus(uid, lstatus) {
+                //alert(userId+", "+loginStatus);
+                $.ajax({
+                    url: 'change_status',
+                    data: {userId: uid, loginStatus: lstatus},
+                    success: function (data) {
+                        alert(data);
+                    }
+                });
+            }
+        </script>
+
+
     </head>
 
     <s:url var="url_bg" value="/static/images/bg.jpg"/>
@@ -68,11 +86,11 @@
                                         <option value="1">Active</option>
                                         <option value="2">Block</option>
                                     </select>   
-                                        
+
                                     <script>
                                         $('#id_${u.id}').val(${u.loginStatus});
                                     </script>
-                                  
+
                                 </td>
                             </tr>
 

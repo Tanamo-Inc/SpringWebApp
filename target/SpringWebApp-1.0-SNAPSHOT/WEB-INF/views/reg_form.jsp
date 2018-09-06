@@ -17,6 +17,24 @@
         <title>Tanamo Inc</title>
         <s:url var="url_css" value="/static/css/main.css"/>
         <link href="${url_css}" rel="stylesheet" type="text/css"/>
+
+        <s:url var="url_jqlib" value="/static/js/jquery-3.2.1.min.js" />
+        <script src="${url_jqlib}"></script>
+
+        <script>
+            $(document).ready(function () {
+                $("#check_avail").click(function () {
+                    $.ajax({
+                        url: 'check_avail',
+                        data: {username: $("#loginName").val()},
+                        success: function (data) {
+                            $("#res_div").html(data);
+                        }
+                    });
+                });
+            });
+        </script>
+
     </head>
 
     <s:url var="url_bg" value="/static/images/bg.jpg"/>
@@ -80,10 +98,12 @@
                                 <td><f:textarea path="user.address" /> </td>
                             </tr>
 
-
                             <tr>
                                 <td>Username</td>
-                                <td><f:input path="user.loginName" /> </td>
+                                <td><f:input id="loginName"  path="user.loginName" /> 
+                                    <button type="button" id="check_avail">Check Availability</button>
+                                    <div id="res_div" class="error"></div>
+                                </td>
                             </tr>
 
                             <tr>
@@ -100,8 +120,6 @@
                         </table>
 
                     </f:form>
-
-
 
                 </td>
             </tr>
