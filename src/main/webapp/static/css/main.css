@@ -8,7 +8,15 @@ html {
     overflow-y: scroll;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif, Courier;
+    color: #FFF;
+    font-weight: 300;
+    top: 10px;
+}
+
+h2, h3, h4, h5, h6 {
     margin: 0;
     font-family: 'Josefin Sans', sans-serif, Courier;
     color: #5a2b42;
@@ -42,19 +50,12 @@ body a:hover {
     text-decoration: none;
 }
 
-
-
-
-/*
-body{
-    font-family: Arial, Helvetica, Geneva, sans-serif;
-    font-size: 18px;   
-}*/
 .error{
     color: #FF0000;
 }
+
 .success{
-    color: #0000FF;
+    color: #5a2b42;
 }
 
 .bod {
@@ -68,7 +69,6 @@ body{
     /*color: #fff;*/
     font-family: 'Open Sans', sans-serif;
 }
-
 
 .forma {
     /*color: #FFF;*/
@@ -92,3 +92,11 @@ body{
     color: #fff;
     box-shadow: 0 1px 1px 0 #5a2b42;
 }
+
+.header{
+    background-image: url("../images/h1.jpg");
+    min-height: 80px;
+    background-size: cover;
+    text-align: center
+}
+

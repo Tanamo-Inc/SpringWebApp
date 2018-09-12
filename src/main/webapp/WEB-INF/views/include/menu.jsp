@@ -13,8 +13,9 @@
     <%--Guest Menu--%>
     <s:url var="url_reg_form" value="/reg_form"/>
     <s:url var="url_index" value="/index"/>
+    <s:url var="url_login" value="/login"/>
 
-    <a href="${url_index}">Home</a>|<a href="${url_reg_form}">Register</a>|<a href="#">Login</a>|<a href="#">About</a>
+    <a href="${url_index}">Home</a>|<a href="${url_reg_form}">Register</a>|<a href="https://tanamo-inc.github.io/Home/">About</a>
 
 </c:if>
 

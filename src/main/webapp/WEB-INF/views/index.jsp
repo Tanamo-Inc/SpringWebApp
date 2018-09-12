@@ -12,6 +12,7 @@
 <!DOCTYPE html>
 <html>
 
+
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Tanamo Inc</title>
@@ -21,18 +22,19 @@
 
     <body class="bod" >
 
-        <table border="1" width="80%" align="center">
+        <table border="1" width="85%" align="center">
 
+            <%-- Header --%>
             <tr>
-                <td height="80px">
-                    <%-- Header --%>
+                <td height="90px">
+
                     <jsp:include page="include/header.jsp"/>
 
                 </td>
             </tr>
 
             <tr>
-                <td height="25px">
+                <td height="30px">
                     <%-- Menu --%>
                     <jsp:include page="include/menu.jsp"/>
 
@@ -60,9 +62,9 @@
 
                     <s:url var="url_register"  value="/reg_form"/>
 
-                    <f:form  class="forma" action="${url_login}" modelAttribute="command">
+                    <f:form  class="forma" action="${url_login}" modelAttribute="command_login">
 
-                        <table border="1">
+                        <table border="2">
 
                             <tr>
                                 <td>Username</td>

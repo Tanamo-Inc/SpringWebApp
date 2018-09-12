@@ -5,5 +5,5 @@
 --%>
 
 <div class="foot">
-    <center> &COPY;2018 Copyrights by <a target="_blank" href="https://tanamo-inc.github.io/Home/">Tanamo Inc GH.</a></center> 
+    <center> &COPY;2018 Copyrights by <a target="_blank" href="https://tanamo-inc.github.io/Home/">Tanamo Inc.</a></center> 
 </div>

@@ -7,6 +7,10 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 /**
  *
  * @author Tanamo
+ *
+ * DispatcherServlet handles incoming requests and route them through Spring
+ *
+ * Front Controller
  */
 public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherServletInitializer {
 
@@ -30,7 +34,7 @@ public class DispatcherServletInit extends AbstractAnnotationConfigDispatcherSer
     @Override
     public void onStartup(ServletContext servletContext) throws ServletException {
         super.onStartup(servletContext); //must present
-       //Configure global task here if required
+        //Configure global task here if required
     }
 
 }

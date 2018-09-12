@@ -8,6 +8,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  *
  * @author Tanamo
+ *
+ *
+ * Controller methods are the final destination point that a web request can
+ * reach. It starts to process the web request by interacting with the service
+ * layer to complete the work that needs to be done.
  */
 @Controller
 public class TestController {

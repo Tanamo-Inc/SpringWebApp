@@ -9,6 +9,7 @@ public class LoginCommand {
     private String loginName;
     private String password;
 
+    //Generated Getters and Setters for both Login Name and Password for Login.
     public String getLoginName() {
         return loginName;
     }
