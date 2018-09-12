@@ -37,9 +37,8 @@
 
     </head>
 
-    <s:url var="url_bg" value="/static/images/bg.jpg"/>
 
-    <body background="${url_bg}" >
+    <body class="bod" >
 
         <table border="1" width="80%" align="center">
 
@@ -74,7 +73,7 @@
 
                     <s:url var="url_reg"  value="/register"/>
 
-                    <f:form action="${url_reg}" modelAttribute="command">
+                    <f:form class="forma"  action="${url_reg}" modelAttribute="command">
 
                         <table border="1">
 

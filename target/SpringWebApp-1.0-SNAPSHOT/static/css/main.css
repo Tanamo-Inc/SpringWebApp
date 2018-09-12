@@ -3,13 +3,92 @@
     Author     : Tanamo
 */
 
+html {
+    font-family: sans-serif;
+    overflow-y: scroll;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    font-family: 'Josefin Sans', sans-serif, Courier;
+    color: #5a2b42;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body a {
+    color: #f24546;
+    transition: 0.5s all ease;
+    -webkit-transition: 0.5s all ease;
+    -moz-transition: 0.5s all ease;
+    -o-transition: 0.5s all ease;
+    -ms-transition: 0.5s all ease;
+}
+
+p {
+    font-family: Arial;
+    margin: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+body a:hover {
+    text-decoration: none;
+}
+
+
+
+
+/*
 body{
     font-family: Arial, Helvetica, Geneva, sans-serif;
     font-size: 18px;   
-}
+}*/
 .error{
     color: #FF0000;
 }
 .success{
     color: #0000FF;
+}
+
+.bod {
+    background: url("../images/back.jpg") no-repeat 0px 0px;
+    background-size: cover;
+
+
+    /*background-color:  #f24546;*/
+    font: bold 16px sans-serif;
+    padding: 55px 0px;
+    /*color: #fff;*/
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.forma {
+    /*color: #FFF;*/
+    padding: 30px;
+    max-width: 250px;
+    margin: 45px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.foot {
+    background-color: #5a2b42;
+    /*background-color: #292c2f;*/
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 0px;
+    margin-top: 10px;
+    bottom: 0;
+    color: #fff;
+    box-shadow: 0 1px 1px 0 #5a2b42;
 }

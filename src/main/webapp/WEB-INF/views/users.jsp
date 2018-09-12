@@ -35,9 +35,8 @@
 
     </head>
 
-    <s:url var="url_bg" value="/static/images/bg.jpg"/>
 
-    <body background="${url_bg}">
+    <body class="bod">
 
         <table border="1" width="80%" align="center">
 

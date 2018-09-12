@@ -12,9 +12,7 @@
         <link href="${url_css}" rel="stylesheet" type="text/css"/>
     </head>
 
-    <s:url var="url_bg" value="/static/images/bg.jpg"/>
-
-    <body background="${url_bg}">
+    <body class="bod">
 
         <table border="1" width="80%" align="center">
 
@@ -53,7 +51,7 @@
                         <tr>
                             <td align="right" >
                                 <form action="${url_search}">
-                                    <input type="text" name="freeText" value="${param.freeText}" placeholder="Enter Text To Search">
+                                    <input type="text" name="freeText" value="${param.freeText}" placeholder="search">
                                     <button>Search</button>
                                 </form> 
                             </td>                           
